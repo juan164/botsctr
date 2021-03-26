@@ -1,0 +1,112 @@
+{
+  "Name": "LogIn",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "echo",
+      "Target": "FASE 1:  INICIO LOGIN",
+      "Value": "blue"
+    },
+    {
+      "Command": "open",
+      "Target": "https://protectasecurity.sanitasperu.com/",
+      "Value": ""
+    },
+    {
+      "Command": "verifyElementPresent",
+      "Target": "id=Login",
+      "Value": "",
+      "Targets": [
+        "id=Login",
+        "name=Login",
+        "xpath=//*[@id=\"Login\"]",
+        "xpath=//input[@id='Login']",
+        "xpath=//input[2]",
+        "css=#Login"
+      ]
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${!statusOK} == false",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "LogOut",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=Login",
+      "Value": "",
+      "Targets": [
+        "id=Login",
+        "name=Login",
+        "xpath=//*[@id=\"Login\"]",
+        "xpath=//input[@id='Login']",
+        "xpath=//input[2]",
+        "css=#Login"
+      ]
+    },
+    {
+      "Command": "type",
+      "Target": "id=Login",
+      "Value": "ccontrerash",
+      "Targets": [
+        "id=Login",
+        "name=Login",
+        "xpath=//*[@id=\"Login\"]",
+        "xpath=//input[@id='Login']",
+        "xpath=//input[2]",
+        "css=#Login"
+      ]
+    },
+    {
+      "Command": "click",
+      "Target": "id=Password",
+      "Value": "",
+      "Targets": [
+        "id=Password",
+        "name=Password",
+        "xpath=//*[@id=\"Password\"]",
+        "xpath=//input[@id='Password']",
+        "xpath=//input[3]",
+        "css=#Password"
+      ]
+    },
+    {
+      "Command": "type",
+      "Target": "id=Password",
+      "Value": "CContrera28$$",
+      "Targets": [
+        "id=Password",
+        "name=Password",
+        "xpath=//*[@id=\"Password\"]",
+        "xpath=//input[@id='Password']",
+        "xpath=//input[3]",
+        "css=#Password"
+      ]
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "xpath=/html/body/div[2]/div[2]/div[2]/form/button",
+      "Value": "",
+      "Targets": [
+        "xpath=/html/body/div[2]/div[2]/div[2]/form/button",
+        "xpath=//button[@type='submit']",
+        "xpath=//button",
+        "css=body > div:nth-child(2) > div:nth-child(2) > div.span4 > form > button"
+      ]
+    },
+    {
+      "Command": "echo",
+      "Target": "FASE 1: FIN LOGIN",
+      "Value": "blue"
+    }
+  ]
+}

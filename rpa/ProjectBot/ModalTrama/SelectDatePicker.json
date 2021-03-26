@@ -1,0 +1,18 @@
+{
+  "Name": "SelectDatePicker",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//div[2]/div/input",
+      "Value": "",
+      "Targets": [
+        "id=DatesRange",
+        "name=DatesRange",
+        "xpath=//*[@id=\"DatesRange\"]",
+        "xpath=//div[2]/div/input",
+        "css=#DatesRange"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "Name": "BackBeforeMonth",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div[9]/div[2]/div/table/thead/tr/th",
+      "Value": "",
+      "Targets": [
+        "xpath=/html/body/div[9]/div[2]/div/table/thead/tr/th",
+        "xpath=//div[9]/div[2]/div/table/thead/tr/th",
+        "css=body > div:nth-child(109) > div.calendar.left > div > table > thead > tr:nth-child(1) > th.prev.available"
+      ]
+    }
+  ]
+}

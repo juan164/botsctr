@@ -1,0 +1,45 @@
+{
+  "Name": "LogOut",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "echo",
+      "Target": "FASE 3: INICIO LOGOUT",
+      "Value": "blue"
+    },
+    {
+      "Command": "pause",
+      "Target": "3000",
+      "Value": ""
+    },
+    {
+      "Command": "click",
+      "Target": "linkText=ccontrerash",
+      "Value": "",
+      "Targets": [
+        "linkText=ccontrerash",
+        "xpath=//*[@id=\"userdrop\"]/a",
+        "xpath=//li[3]/a",
+        "css=#userdrop > a"
+      ]
+    },
+    {
+      "Command": "click",
+      "Target": "linkText=Salir",
+      "Value": "",
+      "Targets": [
+        "linkText=Salir",
+        "id=logoff",
+        "xpath=//*[@id=\"logoff\"]",
+        "xpath=//a[@id='logoff']",
+        "xpath=//li[3]/ul/li/a",
+        "css=#logoff"
+      ]
+    },
+    {
+      "Command": "echo",
+      "Target": "FASE 3: FIN LOGOUT",
+      "Value": "blue"
+    }
+  ]
+}

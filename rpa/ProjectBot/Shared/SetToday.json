@@ -1,0 +1,16 @@
+{
+  "Name": "SetToday",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "var today = new Date();var dd = today.getDate() < 10 ? '0'+ today.getDate() : today.getDate();var mm = today.getMonth() + 1 < 10 ? '0' + (today.getMonth() + 1): (today.getMonth() + 1);var yy = today.getFullYear();return dd + '/' + mm + '/' + yy;",
+      "Value": "var_fecha_actual"
+    },
+    {
+      "Command": "echo",
+      "Target": "Fecha: ${var_fecha_actual}",
+      "Value": ""
+    }
+  ]
+}

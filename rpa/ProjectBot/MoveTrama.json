@@ -1,0 +1,11 @@
+{
+  "Name": "MoveTrama",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "XRun",
+      "Target": "C:\\Users\\Usuario\\Downloads\\bot\\executer_movefiles.bat",
+      "Value": ""
+    }
+  ]
+}

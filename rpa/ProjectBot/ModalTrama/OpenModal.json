@@ -1,0 +1,29 @@
+{
+  "Name": "OpenModal",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"filterForm\"]/div/div[2]/div/div/button",
+      "Value": "",
+      "Targets": [
+        "xpath=//*[@id=\"filterForm\"]/div/div[2]/div/div/button",
+        "xpath=//div[2]/div/div/button",
+        "css=#filterForm > div > div.row-fluid.show-grid1 > div > div > button"
+      ]
+    },
+    {
+      "Command": "click",
+      "Target": "linkText=Trama",
+      "Value": "",
+      "Targets": [
+        "linkText=Trama",
+        "id=btnCreate",
+        "xpath=//*[@id=\"btnCreate\"]",
+        "xpath=//a[@id='btnCreate']",
+        "xpath=//div[2]/div/div/ul/li[2]/a",
+        "css=#btnCreate"
+      ]
+    }
+  ]
+}

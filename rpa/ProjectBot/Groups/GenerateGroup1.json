@@ -1,0 +1,114 @@
+{
+  "Name": "GenerateGroup1",
+  "CreationDate": "2021-3-25",
+  "Commands": [
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/OpenModal",
+      "Value": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[4]/div/div/table/tbody/tr/td/input",
+      "Value": "on",
+      "Targets": [
+        "id=chkSelect",
+        "xpath=//*[@id=\"chkSelect\"]",
+        "xpath=//input[@id='chkSelect']",
+        "xpath=//div[4]/div/div/table/tbody/tr/td/input",
+        "css=#chkSelect"
+      ]
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[4]/div/div/table/tbody/tr/td/input",
+      "Value": "",
+      "Targets": [
+        "id=chkSelect",
+        "xpath=//*[@id=\"chkSelect\"]",
+        "xpath=//input[@id='chkSelect']",
+        "xpath=//div[4]/div/div/table/tbody/tr/td/input",
+        "css=#chkSelect"
+      ]
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//tr[6]/td/input",
+      "Value": "on",
+      "Targets": [
+        "id=chkSelect",
+        "xpath=//*[@id=\"chkSelect\"]",
+        "xpath=//tr[6]/td/input",
+        "css=#chkSelect"
+      ]
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//tr[6]/td/input",
+      "Value": "",
+      "Targets": [
+        "id=chkSelect",
+        "xpath=//*[@id=\"chkSelect\"]",
+        "xpath=//tr[6]/td/input",
+        "css=#chkSelect"
+      ]
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div[2]/div/table/tbody/tr/td/input",
+      "Value": "on",
+      "Targets": [
+        "id=chkSelect",
+        "xpath=//*[@id=\"chkSelect\"]",
+        "xpath=//div[2]/div/table/tbody/tr/td/input",
+        "css=#chkSelect"
+      ]
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//div[2]/div/table/tbody/tr/td/input",
+      "Value": "",
+      "Targets": [
+        "id=chkSelect",
+        "xpath=//*[@id=\"chkSelect\"]",
+        "xpath=//div[2]/div/table/tbody/tr/td/input",
+        "css=#chkSelect"
+      ]
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/SelectDatePicker",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/BackBeforeMonth",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/SelectFirstDate",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/SelectLastDate",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/ConfirmDatePicker",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/CloseModal",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../ModalTrama/ReadFirstElement",
+      "Value": ""
+    }
+  ]
+}
