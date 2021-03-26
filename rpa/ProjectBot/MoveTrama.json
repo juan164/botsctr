@@ -1,10 +1,10 @@
 {
   "Name": "MoveTrama",
-  "CreationDate": "2021-3-25",
+  "CreationDate": "2021-3-26",
   "Commands": [
     {
       "Command": "XRun",
-      "Target": "C:\\Users\\Usuario\\Downloads\\bot\\executer_movefiles.bat",
+      "Target": "C:\\Users\\Usuario\\Downloads\\bot\\scripts\\movefile\\executer_movefiles.bat",
       "Value": ""
     }
   ]

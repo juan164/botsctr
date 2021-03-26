@@ -1,15 +1,20 @@
 {
   "Name": "LogIn",
-  "CreationDate": "2021-3-25",
+  "CreationDate": "2021-3-26",
   "Commands": [
     {
-      "Command": "echo",
-      "Target": "FASE 1:  INICIO LOGIN",
-      "Value": "blue"
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore"
     },
     {
       "Command": "open",
       "Target": "https://protectasecurity.sanitasperu.com/",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Exception/HandlerLogin",
       "Value": ""
     },
     {
@@ -29,6 +34,11 @@
       "Command": "if_v2",
       "Target": "${!statusOK} == false",
       "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!StatusOK"
     },
     {
       "Command": "run",
@@ -104,9 +114,29 @@
       ]
     },
     {
-      "Command": "echo",
-      "Target": "FASE 1: FIN LOGIN",
-      "Value": "blue"
+      "Command": "verifyElementNotPresent",
+      "Target": "xpath=/html/body/div/div/div/ul/li",
+      "Value": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${!StatusOK} == false",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Exception/HandlerLogin",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore"
     }
   ]
 }

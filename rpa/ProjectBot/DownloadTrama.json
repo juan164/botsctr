@@ -1,10 +1,15 @@
 {
   "Name": "DownloadTrama",
-  "CreationDate": "2021-3-25",
+  "CreationDate": "2021-3-26",
   "Commands": [
     {
       "Command": "run",
       "Target": "Shared/LogIn",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Validation/CountTramas",
       "Value": ""
     },
     {
@@ -192,11 +197,6 @@
       "Command": "end",
       "Target": "",
       "Value": ""
-    },
-    {
-      "Command": "echo",
-      "Target": "Fin del Proceso de Descarga",
-      "Value": "teal"
     },
     {
       "Command": "run",

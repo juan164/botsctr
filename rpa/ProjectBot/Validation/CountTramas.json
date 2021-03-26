@@ -1,0 +1,162 @@
+{
+    "Name": "CountTramas",
+    "CreationDate": "2021-3-26",
+    "Commands": [
+      {
+        "Command": "executeScript_Sandbox",
+        "Target": "return false;",
+        "Value": "var_es_fecha_pasada"
+      },
+      {
+        "Command": "store",
+        "Target": "Completado",
+        "Value": "var_estado_trama"
+      },
+      {
+        "Command": "store",
+        "Target": "CARLOS SHOGO CONTRERAS",
+        "Value": "var_usuario_trama"
+      },
+      {
+        "Command": "executeScript_Sandbox",
+        "Target": "return 0;",
+        "Value": "var_iterador_fila"
+      },
+      {
+        "Command": "executeScript_Sandbox",
+        "Target": "return 0;",
+        "Value": "var_contador_registros"
+      },
+      {
+        "Command": "run",
+        "Target": "../Shared/SetToday",
+        "Value": ""
+      },
+      {
+        "Command": "click",
+        "Target": "linkText=Reportes",
+        "Value": "",
+        "Targets": [
+          "linkText=Reportes",
+          "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/a",
+          "xpath=//div/ul/li[4]/a",
+          "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li:nth-child(4) > a"
+        ]
+      },
+      {
+        "Command": "clickAndWait",
+        "Target": "linkText=Descargar Datos",
+        "Value": "",
+        "Targets": [
+          "linkText=Descargar Datos",
+          "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/ul/li/a",
+          "xpath=//li[4]/ul/li/a",
+          "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li.dropdown.open > ul > li > a"
+        ]
+      },
+      {
+        "Command": "pause",
+        "Target": "3000",
+        "Value": ""
+      },
+      {
+        "Command": "click",
+        "Target": "name=ProcessLogListTable_length",
+        "Value": "",
+        "Targets": [
+          "name=ProcessLogListTable_length",
+          "xpath=//*[@id=\"ProcessLogListTable_length\"]/label/select",
+          "xpath=//select[@name='ProcessLogListTable_length']",
+          "xpath=//label/select",
+          "css=#ProcessLogListTable_length > label > select"
+        ]
+      },
+      {
+        "Command": "select",
+        "Target": "name=ProcessLogListTable_length",
+        "Value": "label=25"
+      },
+      {
+        "Command": "click",
+        "Target": "name=ProcessLogListTable_length",
+        "Value": "",
+        "Targets": [
+          "name=ProcessLogListTable_length",
+          "xpath=//*[@id=\"ProcessLogListTable_length\"]/label/select",
+          "xpath=//select[@name='ProcessLogListTable_length']",
+          "xpath=//label/select",
+          "css=#ProcessLogListTable_length > label > select"
+        ]
+      },
+      {
+        "Command": "pause",
+        "Target": "3000",
+        "Value": ""
+      },
+      {
+        "Command": "while_v2",
+        "Target": "${var_contador_registros} < 4 && ${var_es_fecha_pasada} == false",
+        "Value": ""
+      },
+      {
+        "Command": "executeScript_Sandbox",
+        "Target": "return ${var_iterador_fila} + 1;",
+        "Value": "var_iterador_fila"
+      },
+      {
+        "Command": "storeText",
+        "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${var_iterador_fila}]/td[7]",
+        "Value": "var_estado_fila"
+      },
+      {
+        "Command": "storeText",
+        "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${var_iterador_fila}]/td[6]",
+        "Value": "var_usuario_fila"
+      },
+      {
+        "Command": "storeText",
+        "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${var_iterador_fila}]/td[3]",
+        "Value": "var_fecha_fila"
+      },
+      {
+        "Command": "executeScript_Sandbox",
+        "Target": "var today = ${var_fecha_actual};\nvar row_date = ${var_fecha_fila};\nif (row_date.length == 0) return false;\nreturn row_date.indexOf(today) < 0;",
+        "Value": "var_es_fecha_pasada"
+      },
+      {
+        "Command": "if_v2",
+        "Target": "${var_es_fecha_pasada} == false && ${var_usuario_fila} == ${var_usuario_trama} && ${var_estado_fila} == ${var_estado_trama}",
+        "Value": ""
+      },
+      {
+        "Command": "executeScript_Sandbox",
+        "Target": "return ${var_contador_registros} + 1;",
+        "Value": "var_contador_registros"
+      },
+      {
+        "Command": "end",
+        "Target": "",
+        "Value": ""
+      },
+      {
+        "Command": "end",
+        "Target": "",
+        "Value": ""
+      },
+      {
+        "Command": "if_v2",
+        "Target": "${var_contador_registros} < 4 ",
+        "Value": ""
+      },
+      {
+        "Command": "run",
+        "Target": "../Exception/HandlerNumberTramas",
+        "Value": ""
+      },
+      {
+        "Command": "end",
+        "Target": "",
+        "Value": ""
+      }
+    ]
+  }

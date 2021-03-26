@@ -1,12 +1,7 @@
 {
   "Name": "LogOut",
-  "CreationDate": "2021-3-25",
+  "CreationDate": "2021-3-26",
   "Commands": [
-    {
-      "Command": "echo",
-      "Target": "FASE 3: INICIO LOGOUT",
-      "Value": "blue"
-    },
     {
       "Command": "pause",
       "Target": "3000",
@@ -35,11 +30,6 @@
         "xpath=//li[3]/ul/li/a",
         "css=#logoff"
       ]
-    },
-    {
-      "Command": "echo",
-      "Target": "FASE 3: FIN LOGOUT",
-      "Value": "blue"
     }
   ]
 }

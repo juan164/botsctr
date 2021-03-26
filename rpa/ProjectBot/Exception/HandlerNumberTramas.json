@@ -1,0 +1,26 @@
+{
+  "Name": "HandlerNumberTramas",
+  "CreationDate": "2021-3-26",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore"
+    },
+    {
+      "Command": "store",
+      "Target": "No se han generado todas las tramas en SANITAS",
+      "Value": "var_error_numero_tramas"
+    },
+    {
+      "Command": "XRun",
+      "Target": "C:\\Users\\Usuario\\Downloads\\bot\\scripts\\sendemail\\executer_emaildownload.bat",
+      "Value": ""
+    },
+    {
+      "Command": "throwError",
+      "Target": "${var_error_numero_tramas}",
+      "Value": ""
+    }
+  ]
+}
