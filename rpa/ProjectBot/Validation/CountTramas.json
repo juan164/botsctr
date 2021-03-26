@@ -169,8 +169,18 @@
       "Value": ""
     },
     {
+      "Command": "run",
+      "Target": "../Shared/LogOut",
+      "Value": ""
+    },
+    {
       "Command": "pause",
       "Target": "1800000",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Shared/LogIn",
       "Value": ""
     },
     {
