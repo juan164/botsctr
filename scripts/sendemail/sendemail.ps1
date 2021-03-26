@@ -1,9 +1,9 @@
 function Send-Email() {
     param(
-        [Parameter(mandatory=$true)][string]$To,
         [Parameter(mandatory=$true)][string]$Subject,
         [Parameter(mandatory=$true)][string]$Body
     )
+    [string[]]$destination  = "juan.castro@materiagris.pe", "milagros.guevara@materiagris.pe"
     $username   = "bot.sctrprotecta@gmail.com"
     $password   = "botprotecta"
     $secstr     = New-Object -TypeName System.Security.SecureString
@@ -11,7 +11,7 @@ function Send-Email() {
 
     $hash = @{
         from       = $username
-        to         = $To
+        to         = $destionation
         subject    = $Subject
         smtpserver = "smtp.gmail.com"
         body       = $Body
@@ -41,4 +41,4 @@ else {
     $body = "Ha ocurrido un problema, por favor proceder manualmente"
 }
 
-Send-Email -To "juan.castro@materiagris.pe" -Subject $subject -Body $body
+Send-Email -Subject $subject -Body $body
