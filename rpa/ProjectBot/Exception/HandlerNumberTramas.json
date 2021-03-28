@@ -1,6 +1,6 @@
 {
   "Name": "HandlerNumberTramas",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "store",
@@ -14,7 +14,7 @@
     },
     {
       "Command": "XRun",
-      "Target": "C:\\Users\\Usuario\\Downloads\\bot\\scripts\\sendemail\\executer_emaildownload.bat",
+      "Target": "C:\\Users\\Juan\\Documents\\bot\\scripts\\sendemail\\executer_emaildownload.bat",
       "Value": ""
     },
     {

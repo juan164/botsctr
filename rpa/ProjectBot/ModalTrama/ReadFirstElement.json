@@ -1,16 +1,61 @@
 {
   "Name": "ReadFirstElement",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
-      "Command": "open",
-      "Target": "https://protectasecurity.sanitasperu.com/ProcessLogs/Index",
-      "Value": ""
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[1]/td[7]",
+      "Value": "row_trama_state"
     },
     {
       "Command": "storeText",
-      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[1]/td[1]",
-      "Value": "var_id_generado"
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[1]/td[6]",
+      "Value": "row_trama_user"
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${row_trama_state} == 'En Progreso' && ${row_trama_user} == 'CARLOS SHOGO CONTRERAS'",
+      "Value": "row_trama_user"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[1]/td[2]",
+      "Value": "row_trama_id"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[1]/td[2]",
+      "Value": "!csvLine"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false;",
+      "Value": "error_generate_trama"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${retry_generate} + 1;",
+      "Value": "retry_generate"
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return true;",
+      "Value": "error_generate_trama"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "retry_generate"
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
     }
   ]
 }

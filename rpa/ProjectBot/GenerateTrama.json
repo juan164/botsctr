@@ -1,58 +1,41 @@
 {
   "Name": "GenerateTrama",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
+    {
+      "Command": "store",
+      "Target": "60",
+      "Value": "!timeout_wait"
+    },
+    {
+      "Command": "store",
+      "Target": "60",
+      "Value": "!timeout_pageload"
+    },
     {
       "Command": "executeScript_Sandbox",
       "Target": "return 0;",
-      "Value": "var_iterador_grupo"
+      "Value": "idx_group"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "retry_generate"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_iterador_grupo} < 4",
+      "Target": "${idx_group} < 4",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return ${var_iterador_grupo} + 1;",
-      "Value": "var_iterador_grupo"
+      "Target": "return ${idx_group} + 1;",
+      "Value": "idx_group"
     },
     {
       "Command": "run",
       "Target": "Shared/LogIn",
-      "Value": "teal"
-    },
-    {
-      "Command": "click",
-      "Target": "linkText=Reportes",
-      "Value": "",
-      "Targets": [
-        "linkText=Reportes",
-        "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/a",
-        "xpath=//div/ul/li[4]/a",
-        "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li:nth-child(4) > a"
-      ]
-    },
-    {
-      "Command": "clickAndWait",
-      "Target": "linkText=Descargar Datos",
-      "Value": "",
-      "Targets": [
-        "linkText=Descargar Datos",
-        "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/ul/li/a",
-        "xpath=//li[4]/ul/li/a",
-        "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li.dropdown.open > ul > li > a"
-      ]
-    },
-    {
-      "Command": "run",
-      "Target": "Groups/GenerateGroup${var_iterador_grupo}",
       "Value": ""
-    },
-    {
-      "Command": "run",
-      "Target": "Shared/LogOut",
-      "Value": "teal"
     },
     {
       "Command": "pause",
@@ -60,8 +43,48 @@
       "Value": ""
     },
     {
+      "Command": "run",
+      "Target": "Shared/GoReport",
+      "Value": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "5000",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Groups/GenerateGroup${idx_group}",
+      "Value": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "5000",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Shared/LogOut",
+      "Value": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "5000",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "Validation/CorrectTrama",
+      "Value": ""
+    },
+    {
       "Command": "end",
       "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "csvSave",
+      "Target": "csv_ids",
       "Value": ""
     }
   ]

@@ -1,96 +1,76 @@
 {
   "Name": "SelectFirstDate",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
-      "Command": "store",
-      "Target": "0",
-      "Value": "var_iterador_semana"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "idx_week"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_iterador_semana} < 6",
+      "Target": "${idx_week} < 6",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return Number(${var_iterador_semana}) + 1;",
-      "Value": "var_iterador_semana"
+      "Target": "return ${idx_week} + 1;",
+      "Value": "idx_week"
     },
     {
-      "Command": "store",
-      "Target": "0",
-      "Value": "var_iterador_dia"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "idx_day"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_iterador_dia} < 7",
+      "Target": "${idx_day} < 7",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return Number(${var_iterador_dia}) + 1;",
-      "Value": "var_iterador_dia"
-    },
-    {
-      "Command": "echo",
-      "Target": "Iterador: Semana: ${var_iterador_semana} - Dia: ${var_iterador_dia} ",
-      "Value": ""
-    },
-    {
-      "Command": "comment",
-      "Target": "Reviso que sea un día anterior y que la casilla pertenezca al mes (este activa)",
-      "Value": ""
+      "Target": "return ${idx_day} + 1;",
+      "Value": "idx_day"
     },
     {
       "Command": "storeText",
-      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${var_iterador_semana}]/td[${var_iterador_dia}]",
-      "Value": "var_dia"
+      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${idx_week}]/td[${idx_day}]",
+      "Value": "picker_day"
     },
     {
       "Command": "storeAttribute",
-      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${var_iterador_semana}]/td[${var_iterador_dia}]@class",
-      "Value": "var_css_dia"
-    },
-    {
-      "Command": "comment",
-      "Target": "echo // Dia: ${var_dia} - Atributo: ${var_css_dia}",
-      "Value": "navy"
+      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${idx_week}]/td[${idx_day}]@class",
+      "Value": "picker_css"
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "var today = ${var_dia};\nvar css = ${var_css_dia};\nreturn Number(today) == 1 && (css.indexOf('available') > -1);",
-      "Value": "var_dia_correcto"
-    },
-    {
-      "Command": "comment",
-      "Target": "echo // Es correcto: ${var_dia_correcto}",
-      "Value": "navy"
+      "Target": "var today = ${picker_day};\nvar css = ${picker_css};\nreturn Number(today) == 1 && (css.indexOf('available') > -1);",
+      "Value": "picker_is_today"
     },
     {
       "Command": "if_v2",
-      "Target": "${var_dia_correcto} == true",
+      "Target": "${picker_is_today} == true",
       "Value": ""
     },
     {
       "Command": "store",
-      "Target": "${var_iterador_semana}",
-      "Value": "var_idx_ant_semana"
+      "Target": "${idx_week}",
+      "Value": "picker_select_week"
     },
     {
       "Command": "store",
-      "Target": "${var_iterador_dia}",
-      "Value": "var_idx_ant_dia"
+      "Target": "${idx_day}",
+      "Value": "picker_select_day"
     },
     {
-      "Command": "store",
-      "Target": "9999",
-      "Value": "var_iterador_dia"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 9999;",
+      "Value": "idx_day"
     },
     {
-      "Command": "store",
-      "Target": "9999",
-      "Value": "var_iterador_semana"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 9999;",
+      "Value": "idx_week"
     },
     {
       "Command": "end",
@@ -105,21 +85,16 @@
     {
       "Command": "end",
       "Target": "",
-      "Value": ""
-    },
-    {
-      "Command": "comment",
-      "Target": "Hago click en el elemento que fue elegido",
       "Value": ""
     },
     {
       "Command": "mouseOver",
-      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${var_idx_ant_semana}]/td[${var_idx_ant_dia}]",
+      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${picker_select_week}]/td[${picker_select_day}]",
       "Value": ""
     },
     {
       "Command": "click",
-      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${var_idx_ant_semana}]/td[${var_idx_ant_dia}]",
+      "Target": "xpath=/html/body/div[9]/div[2]/div/table/tbody/tr[${picker_select_week}]/td[${picker_select_day}]",
       "Value": ""
     }
   ]

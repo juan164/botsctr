@@ -1,0 +1,33 @@
+{
+    "Name": "GoReport",
+    "CreationDate": "2021-3-28",
+    "Commands": [
+      {
+        "Command": "click",
+        "Target": "linkText=Reportes",
+        "Value": "",
+        "Targets": [
+          "linkText=Reportes",
+          "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/a",
+          "xpath=//div/ul/li[4]/a",
+          "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li:nth-child(4) > a"
+        ]
+      },
+      {
+        "Command": "clickAndWait",
+        "Target": "linkText=Descargar Datos",
+        "Value": "",
+        "Targets": [
+          "linkText=Descargar Datos",
+          "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/ul/li/a",
+          "xpath=//li[4]/ul/li/a",
+          "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li.dropdown.open > ul > li > a"
+        ]
+      },
+      {
+        "Command": "pause",
+        "Target": "5000",
+        "Value": ""
+      }
+    ]
+  }

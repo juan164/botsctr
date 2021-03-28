@@ -1,17 +1,7 @@
 {
   "Name": "CloseModal",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
-    {
-      "Command": "echo",
-      "Target": "FASE 2.1.5: INICIO BOTON GENERAR TRAMAS",
-      "Value": ""
-    },
-    {
-      "Command": "store",
-      "Target": "Slow",
-      "Value": "!REPLAYSPEED"
-    },
     {
       "Command": "comment",
       "Target": "click // linkText=Cerrar",
@@ -33,16 +23,6 @@
         "xpath=//div[2]/div[5]/button",
         "css=#btnSave"
       ]
-    },
-    {
-      "Command": "echo",
-      "Target": "FASE 2.1.5: FIN BOTON GENERAR TRAMAS",
-      "Value": ""
-    },
-    {
-      "Command": "store",
-      "Target": "Fast",
-      "Value": "!REPLAYSPEED"
     }
   ]
 }

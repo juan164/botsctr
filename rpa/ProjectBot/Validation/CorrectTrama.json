@@ -1,0 +1,41 @@
+{
+  "Name": "CorrectTrama",
+  "CreationDate": "2021-3-28",
+  "Commands": [
+    {
+      "Command": "if_v2",
+      "Target": "${error_generate_trama}",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Resto uno para que se mantenga en el mismo grupo que no genero correctamente",
+      "Value": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${idx_group} - 1;",
+      "Value": "idx_group"
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${retry_generate} > 3",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Exception/HandlerNumberTramas",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    }
+  ]
+}

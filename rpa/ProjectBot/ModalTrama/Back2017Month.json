@@ -1,20 +1,15 @@
 {
   "Name": "Back2017Month",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "storeText",
       "Target": "xpath=/html/body/div[9]/div[2]/div/table/thead/tr/th[2]",
-      "Value": "var_month_year"
-    },
-    {
-      "Command": "echo",
-      "Target": "${var_month_year}",
-      "Value": ""
+      "Value": "month_year"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_month_year} != 'Abr 2017'",
+      "Target": "${month_year} != 'Abr 2017'",
       "Value": ""
     },
     {
@@ -30,12 +25,7 @@
     {
       "Command": "storeText",
       "Target": "xpath=/html/body/div[9]/div[2]/div/table/thead/tr/th[2]",
-      "Value": "var_month_year"
-    },
-    {
-      "Command": "echo",
-      "Target": "${var_month_year}",
-      "Value": ""
+      "Value": "month_year"
     },
     {
       "Command": "end",

@@ -1,91 +1,81 @@
 {
   "Name": "SelectLastDate",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "executeScript_Sandbox",
       "Target": "var today = new Date();var dd = today.getDate() < 10 ? '0'+ today.getDate() : today.getDate(); return dd;",
-      "Value": "var_dia_actual"
+      "Value": "current_day"
     },
     {
-      "Command": "store",
-      "Target": "0",
-      "Value": "var_iterador_semana"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "idx_week"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_iterador_semana} < 6",
+      "Target": "${idx_week} < 6",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return Number(${var_iterador_semana}) + 1;",
-      "Value": "var_iterador_semana"
+      "Target": "return ${idx_week} + 1;",
+      "Value": "idx_week"
     },
     {
-      "Command": "store",
-      "Target": "0",
-      "Value": "var_iterador_dia"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "idx_day"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_iterador_dia} < 7",
+      "Target": "${idx_day} < 7",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return Number(${var_iterador_dia}) + 1;",
-      "Value": "var_iterador_dia"
+      "Target": "return ${idx_day} + 1;",
+      "Value": "idx_day"
     },
     {
       "Command": "storeText",
-      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${var_iterador_semana}]/td[${var_iterador_dia}]",
-      "Value": "var_dia"
+      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${idx_week}]/td[${idx_day}]",
+      "Value": "picker_day"
     },
     {
       "Command": "storeAttribute",
-      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${var_iterador_semana}]/td[${var_iterador_dia}]@class",
-      "Value": "var_css_dia"
-    },
-    {
-      "Command": "comment",
-      "Target": "echo // Dia: ${var_dia} - Atributo: ${var_css_dia}",
-      "Value": "navy"
+      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${idx_week}]/td[${idx_day}]@class",
+      "Value": "picker_css"
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "var today = ${var_dia_actual};\nvar css = ${var_css_dia};\nvar day = ${var_dia};\nvar unavailable = (css.indexOf('available off') > -1 || css.indexOf('off disabled') > -1);\nreturn Number(today) == Number(day) && !unavailable;",
-      "Value": "var_dia_correcto"
-    },
-    {
-      "Command": "comment",
-      "Target": "echo // Es correcto: ${var_dia_correcto}",
-      "Value": "navy"
+      "Target": "var today = ${current_day};\nvar css = ${picker_css};\nvar day = ${picker_day};\nvar unavailable = (css.indexOf('available off') > -1 || css.indexOf('off disabled') > -1);\nreturn Number(today) == Number(day) && !unavailable;",
+      "Value": "picker_is_today"
     },
     {
       "Command": "if_v2",
-      "Target": "${var_dia_correcto} == true",
+      "Target": "${picker_is_today} == true",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "var iterador_dia = ${var_iterador_dia};\nreturn Number(iterador_dia) == 1 ? 7 : Number(iterador_dia) - 1;",
-      "Value": "var_idx_hasta_dia"
+      "Target": "var iterador_dia = ${idx_day};\nreturn Number(iterador_dia) == 1 ? 7 : Number(iterador_dia) - 1;",
+      "Value": "picker_select_day"
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "var iterador_semana = ${var_iterador_semana};\nvar iterador_dia = ${var_iterador_dia};\nreturn Number(iterador_dia) == 1 ? Number(iterador_semana) - 1 : Number(iterador_semana);",
-      "Value": "var_idx_hasta_semana"
+      "Target": "var iterador_semana = ${idx_week};\nvar iterador_dia = ${idx_day};\nreturn Number(iterador_dia) == 1 ? Number(iterador_semana) - 1 : Number(iterador_semana);",
+      "Value": "picker_select_week"
     },
     {
-      "Command": "store",
-      "Target": "9999",
-      "Value": "var_iterador_dia"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 9999;",
+      "Value": "idx_day"
     },
     {
-      "Command": "store",
-      "Target": "9999",
-      "Value": "var_iterador_semana"
+      "Command": "executeScript_Sandbox",
+      "Target": "return 9999;",
+      "Value": "idx_week"
     },
     {
       "Command": "end",
@@ -104,7 +94,7 @@
     },
     {
       "Command": "mouseOver",
-      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${var_idx_hasta_semana}]/td[${var_idx_hasta_dia}]",
+      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${picker_select_week}]/td[${picker_select_day}]",
       "Value": "",
       "Targets": [
         "xpath=/html/body/div[9]/div/div/table/tbody/tr[5]/td[4]",
@@ -114,7 +104,7 @@
     },
     {
       "Command": "click",
-      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${var_idx_hasta_semana}]/td[${var_idx_hasta_dia}]",
+      "Target": "xpath=/html/body/div[9]/div/div/table/tbody/tr[${picker_select_week}]/td[${picker_select_day}]",
       "Value": "",
       "Targets": [
         "xpath=/html/body/div[9]/div/div/table/tbody/tr[5]/td[4]",

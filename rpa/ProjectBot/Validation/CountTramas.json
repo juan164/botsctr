@@ -1,72 +1,20 @@
 {
   "Name": "CountTramas",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "executeScript_Sandbox",
       "Target": "return 0;",
-      "Value": "var_reintento_descarga"
+      "Value": "retry_download"
     },
     {
       "Command": "label",
-      "Target": "REINICIAR",
+      "Target": "REBOOT_VALIDATION_DOWNLOAD",
       "Value": ""
-    },
-    {
-      "Command": "executeScript_Sandbox",
-      "Target": "return false;",
-      "Value": "var_es_fecha_pasada"
-    },
-    {
-      "Command": "store",
-      "Target": "Completado",
-      "Value": "var_estado_trama"
-    },
-    {
-      "Command": "store",
-      "Target": "CARLOS SHOGO CONTRERAS",
-      "Value": "var_usuario_trama"
-    },
-    {
-      "Command": "executeScript_Sandbox",
-      "Target": "return 0;",
-      "Value": "var_iterador_fila"
-    },
-    {
-      "Command": "executeScript_Sandbox",
-      "Target": "return 0;",
-      "Value": "var_contador_registros"
     },
     {
       "Command": "run",
-      "Target": "../Shared/SetToday",
-      "Value": ""
-    },
-    {
-      "Command": "click",
-      "Target": "linkText=Reportes",
-      "Value": "",
-      "Targets": [
-        "linkText=Reportes",
-        "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/a",
-        "xpath=//div/ul/li[4]/a",
-        "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li:nth-child(4) > a"
-      ]
-    },
-    {
-      "Command": "clickAndWait",
-      "Target": "linkText=Descargar Datos",
-      "Value": "",
-      "Targets": [
-        "linkText=Descargar Datos",
-        "xpath=/html/body/div/div/div/div[2]/div/ul/li[4]/ul/li/a",
-        "xpath=//li[4]/ul/li/a",
-        "css=body > div.navbar.navbar-inverse.navbar-fixed-top > div > div > div.span12 > div > ul > li.dropdown.open > ul > li > a"
-      ]
-    },
-    {
-      "Command": "pause",
-      "Target": "3000",
+      "Target": "../Shared/GoReport",
       "Value": ""
     },
     {
@@ -99,49 +47,194 @@
       ]
     },
     {
-      "Command": "pause",
-      "Target": "3000",
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore"
+    },
+    {
+      "Command": "csvRead",
+      "Target": "csv_ids.csv",
       "Value": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${!statusok} == false",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Exception/HandlerNumberTramas",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore"
+    },
+    {
+      "Command": "store",
+      "Target": "${!csvReadMaxRow}",
+      "Value": "!csvReadLineNumber"
+    },
+    {
+      "Command": "csvRead",
+      "Target": "csv_ids.csv",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorignore"
+    },
+    {
+      "Command": "echo",
+      "Target": "${!COL1}",
+      "Value": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${!COL2}",
+      "Value": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${!COL3}",
+      "Value": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${!COL4}",
+      "Value": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${!statusok} == false",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Exception/HandlerNumberTramas",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore"
+    },
+    {
+      "Command": "run",
+      "Target": "../Shared/SetToday",
+      "Value": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return false;",
+      "Value": "is_not_today"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "download_count"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "download_ok_count"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return 0;",
+      "Value": "idx_row_trama"
     },
     {
       "Command": "while_v2",
-      "Target": "${var_contador_registros} < 4 && ${var_es_fecha_pasada} == false",
+      "Target": "${download_count} < 4",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return ${var_iterador_fila} + 1;",
-      "Value": "var_iterador_fila"
+      "Target": "return ${idx_row_trama} + 1;",
+      "Value": "idx_row_trama"
     },
     {
       "Command": "storeText",
-      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${var_iterador_fila}]/td[7]",
-      "Value": "var_estado_fila"
-    },
-    {
-      "Command": "storeText",
-      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${var_iterador_fila}]/td[6]",
-      "Value": "var_usuario_fila"
-    },
-    {
-      "Command": "storeText",
-      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${var_iterador_fila}]/td[3]",
-      "Value": "var_fecha_fila"
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${idx_row_trama}]/td[2]",
+      "Value": "row_trama_id"
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "var today = ${var_fecha_actual};\nvar row_date = ${var_fecha_fila};\nif (row_date.length == 0) return false;\nreturn row_date.indexOf(today) < 0;",
-      "Value": "var_es_fecha_pasada"
+      "Target": "var ids = [${!COL1}, ${!COL2}, ${!COL3}, ${!COL4}];\nreturn ids.indexOf(${row_trama_id}) > -1;\n\n",
+      "Value": "row_is_downloadable"
     },
     {
       "Command": "if_v2",
-      "Target": "${var_es_fecha_pasada} == false && ${var_usuario_fila} == ${var_usuario_trama} && ${var_estado_fila} == ${var_estado_trama}",
+      "Target": "${row_is_downloadable} == true",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return ${var_contador_registros} + 1;",
-      "Value": "var_contador_registros"
+      "Target": "return ${download_count} + 1;",
+      "Value": "download_count"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${idx_row_trama}]/td[7]",
+      "Value": "row_trama_state"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${idx_row_trama}]/td[6]",
+      "Value": "row_trama_user"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ProcessLogListTable\"]/tbody/tr[${idx_row_trama}]/td[3]",
+      "Value": "row_trama_date"
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "var today = ${today};\nvar row_date = ${row_trama_date};\nif (row_date.length == 0) return false;\nreturn row_date.indexOf(today) < 0;",
+      "Value": "is_not_today"
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${row_trama_user} == 'CARLOS SHOGO CONTRERAS' && ${is_not_today} == false",
+      "Value": ""
+    },
+    {
+      "Command": "if_v2",
+      "Target": "${row_trama_state} == 'Completado' ",
+      "Value": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return ${download_ok_count} + 1;",
+      "Value": "download_ok_count"
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "else",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "run",
+      "Target": "../Exception/HandlerNumberTramas",
+      "Value": ""
     },
     {
       "Command": "end",
@@ -154,18 +247,23 @@
       "Value": ""
     },
     {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
       "Command": "if_v2",
-      "Target": "${var_contador_registros} < 4 ",
+      "Target": "${download_ok_count} < 4 ",
       "Value": ""
     },
     {
       "Command": "executeScript_Sandbox",
-      "Target": "return ${var_reintento_descarga} + 1;",
-      "Value": "var_reintento_descarga"
+      "Target": "return ${retry_download} + 1;",
+      "Value": "retry_download"
     },
     {
       "Command": "if_v2",
-      "Target": "${var_reintento_descarga} <= 1",
+      "Target": "${retry_download} <= 1",
       "Value": ""
     },
     {
@@ -185,7 +283,7 @@
     },
     {
       "Command": "gotoLabel",
-      "Target": "REINICIAR",
+      "Target": "REBOOT_VALIDATION_DOWNLOAD",
       "Value": ""
     },
     {

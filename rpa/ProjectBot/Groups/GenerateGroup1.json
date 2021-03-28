@@ -1,6 +1,6 @@
 {
   "Name": "GenerateGroup1",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "run",
@@ -33,23 +33,23 @@
     },
     {
       "Command": "type",
-      "Target": "xpath=//tr[6]/td/input",
+      "Target": "xpath=//div[4]/div/div/table/tbody/tr[6]/td/input",
       "Value": "on",
       "Targets": [
         "id=chkSelect",
         "xpath=//*[@id=\"chkSelect\"]",
-        "xpath=//tr[6]/td/input",
+        "xpath=//div[4]/div/div/table/tbody/tr[6]/td/input",
         "css=#chkSelect"
       ]
     },
     {
       "Command": "click",
-      "Target": "xpath=//tr[6]/td/input",
+      "Target": "xpath=//div[4]/div/div/table/tbody/tr[6]/td/input",
       "Value": "",
       "Targets": [
         "id=chkSelect",
         "xpath=//*[@id=\"chkSelect\"]",
-        "xpath=//tr[6]/td/input",
+        "xpath=//div[4]/div/div/table/tbody/tr[6]/td/input",
         "css=#chkSelect"
       ]
     },

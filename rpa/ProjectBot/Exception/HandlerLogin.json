@@ -1,41 +1,46 @@
 {
-    "Name": "HandlerLogin",
-    "CreationDate": "2021-3-26",
-    "Commands": [
-      {
-        "Command": "if_v2",
-        "Target": "${!StatusOK} == false",
-        "Value": ""
-      },
-      {
-        "Command": "store",
-        "Target": "false",
-        "Value": "!errorignore"
-      },
-      {
-        "Command": "store",
-        "Target": "No hemos podido acceder a la página de SANITAS",
-        "Value": "var_error_email"
-      },
-      {
-        "Command": "XRun",
-        "Target": "C:\\Users\\Usuario\\Downloads\\bot\\scripts\\sendemail\\executer_emaillogin.bat",
-        "Value": ""
-      },
-      {
-        "Command": "throwError",
-        "Target": "${var_error_email}",
-        "Value": ""
-      },
-      {
-        "Command": "end",
-        "Target": "",
-        "Value": ""
-      },
-      {
-        "Command": "comment",
-        "Target": "onError // ",
-        "Value": ""
-      }
-    ]
-  }
+  "Name": "HandlerLogin",
+  "CreationDate": "2021-3-28",
+  "Commands": [
+    {
+      "Command": "if_v2",
+      "Target": "${!StatusOK} == false",
+      "Value": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorignore"
+    },
+    {
+      "Command": "store",
+      "Target": "No hemos podido acceder a la página de SANITAS",
+      "Value": "var_error_email"
+    },
+    {
+      "Command": "XRun",
+      "Target": "C:\\Users\\Juan\\Documents\\bot\\scripts\\sendemail\\executer_emaillogin.bat",
+      "Value": ""
+    },
+    {
+      "Command": "throwError",
+      "Target": "${var_error_email}",
+      "Value": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "# Macro que administra las caidas por Login",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "# Verifica que el estado no sea correcto y envía un email",
+      "Value": ""
+    }
+  ]
+}

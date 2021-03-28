@@ -1,6 +1,6 @@
 {
   "Name": "LogIn",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "store",
@@ -137,6 +137,26 @@
       "Command": "store",
       "Target": "false",
       "Value": "!errorignore"
+    },
+    {
+      "Command": "comment",
+      "Target": "# Macro encargada de ejecutar el inicio de sesión",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "# Abre la pagina de SANITAS, en caso de no poder envía correo",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "# Verifica poder ingresar las credenciales, sino entiende que debe desloguear",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "# Ingresa credenciales y loguea, si no son correctas envía correo",
+      "Value": ""
     }
   ]
 }

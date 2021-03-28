@@ -1,6 +1,6 @@
 {
   "Name": "LogOut",
-  "CreationDate": "2021-3-26",
+  "CreationDate": "2021-3-28",
   "Commands": [
     {
       "Command": "pause",
@@ -30,6 +30,16 @@
         "xpath=//li[3]/ul/li/a",
         "css=#logoff"
       ]
+    },
+    {
+      "Command": "comment",
+      "Target": "# Macro encargada del cierre de sesión",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "# Pausa y cierra sesión",
+      "Value": ""
     }
   ]
 }
